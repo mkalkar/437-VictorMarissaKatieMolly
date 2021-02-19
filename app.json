@@ -1,0 +1,12 @@
+{
+  "name": "437-VictorMarissaKatieMolly",
+  "displayName": "437-VictorMarissaKatieMolly",
+  "expo": {
+    "name": "437-VictorMarissaKatieMolly",
+    "slug": "437-VictorMarissaKatieMolly",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
