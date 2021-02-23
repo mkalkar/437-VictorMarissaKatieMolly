@@ -1,0 +1,17 @@
+{
+  "projectName": "437VMKM",
+  "version": "3.0",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react-native",
+    "config": {
+      "SourceDir": "src",
+      "DistributionDir": "/",
+      "BuildCommand": "npm run build",
+      "StartCommand": "npm start"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}
