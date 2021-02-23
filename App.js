@@ -8,11 +8,12 @@ export default function App() {
   //fetch from backend
   function Fetch(){
   console.log("in fetch");
-  fetch('backend/AppBackend.js', {
+  fetch('http://localhost:3000/', {
     method: 'POST',
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: 'application/json'
+      // 'Content-Type': 'application/json',
+      
     },
     body: JSON.stringify({
       firstParam: 'yourValue',
@@ -20,6 +21,7 @@ export default function App() {
     }),
   });
   }
+
   return (
     // <View style={styles.container}>
     //   <Text>Hello Marissa wuz here</Text>
@@ -29,8 +31,6 @@ export default function App() {
 
   );
 }
-
-
 
 
 
