@@ -22,12 +22,15 @@ export default function App() {
   });
   }
 
+  function changePage() {
+    return res.redirect('/frontend/chat.js');
+  }
+
   return (
-    // <View style={styles.container}>
-    //   <Text>Hello Marissa wuz here</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    <button onClick={() => Fetch()} type="button"> click here</button>
+    <div style={{backgroundColor: "blue"}}>
+      <div>MAIN PAGE</div>
+      <button onClick={() => changePage()} type="button"> click here</button>
+    </div>
 
   );
 }
