@@ -1,27 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, createAppContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import App from '../App.js';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import { Icon } from 'react-native-elements';
 
-
-
-export default function Chat({ navigation }) {
-
-  function changePage() {
-    return res.redirect('/../App.js');
-  }
+export default function ChatScreen({ navigation }) {
 
   return (
-    <div style={{ backgroundColor: "red" }}>
-      <div>CHAT PAGE</div>
-      <button onClick={() => changePage()} type="button"> click here to go back</button>
-    </div>
-
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "red" }}>
+      <Text>Chit chat with your friends</Text>
+      <Button
+        title="Go back"
+        onPress={() => navigation.goBack()}
+      />
+      <Button
+        title="Go to profile"
+        onPress={() => navigation.navigate("Profile")}
+      />
+    </View>
   );
-}
 
+}
 
 
 const styles = StyleSheet.create({
