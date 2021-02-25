@@ -23,7 +23,7 @@ function App() {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
+            let newVar;
             if (route.name === 'Home') {
               iconName = 'home-outline';
             } else if (route.name === 'Chat') {
