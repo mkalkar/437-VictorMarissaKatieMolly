@@ -7,70 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
 
-/*const FirstName = () => {
-    const [value, onChangeText] = React.useState('');
 
-    return (
-        <>
-            <Text>
-                First Name:
-          </Text>
-            <TextInput
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 200 }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
-            />
-        </>
-    );
-}
-const Username = () => {
-    const [value, onChangeText] = React.useState('');
-
-    return (
-        <>
-            <Text>
-                Username:
-          </Text>
-            <TextInput
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 200 }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
-            />
-        </>
-    );
-}
-const Password = () => {
-    const [value, onChangeText] = React.useState('');
-
-    return (
-        <>
-            <Text>
-                Password:
-          </Text>
-            <TextInput
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 200 }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
-            />
-        </>
-    );
-}
-const VerifyPassword = () => {
-    const [value, onChangeText] = React.useState('');
-
-    return (
-        <>
-            <Text>
-                Verify Your Password:
-          </Text>
-            <TextInput
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 200 }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
-            />
-        </>
-    );
-}*/
 const SUFields = (props) => {
     const [value, onChangeText] = React.useState('');
 

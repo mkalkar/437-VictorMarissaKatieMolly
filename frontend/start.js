@@ -10,6 +10,7 @@ import { Icon } from 'react-native-elements';
 export default function StartScreen({ navigation }) {
 
     return (
+
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text> Home!</Text>
             <Button
@@ -21,6 +22,7 @@ export default function StartScreen({ navigation }) {
                 onPress={() => navigation.navigate('Sign up')}
             />
         </View>
+
     );
 
 }
