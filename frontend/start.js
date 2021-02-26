@@ -7,18 +7,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
 
-export default function HomeScreen({ navigation }) {
+export default function StartScreen({ navigation }) {
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text> Home!</Text>
             <Button
-                title="Go to Chat"
-                onPress={() => navigation.navigate('Chat')}
+                title="Login"
+                onPress={() => navigation.navigate('Login')}
             />
             <Button
-                title="Go to profile"
-                onPress={() => navigation.navigate('Profile')}
+                title="Sign Up"
+                onPress={() => navigation.navigate('Sign up')}
             />
         </View>
     );

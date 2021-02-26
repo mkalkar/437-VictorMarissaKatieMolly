@@ -12,14 +12,14 @@ import ChatScreen from './frontend/chat.js';
 import ProfilePage from './frontend/profile.js';
 import HomeScreen from './frontend/home.js';
 import LoginScreen from './frontend/login.js';
-
-
+import StartScreen from './frontend/start.js';
+import SignupScreen from './frontend/signup.js';
 const Tab = createBottomTabNavigator();
 function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Login"
+        initialRouteName="Start"
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -44,6 +44,8 @@ function App() {
 
 
       >
+        <Tab.Screen name="Start" component={StartScreen} />
+        <Tab.Screen name="Sign up" component={SignupScreen} />
         <Tab.Screen name="Login" component={LoginScreen} />
         <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home Page' }} />
         <Tab.Screen name="Chat" component={ChatScreen} />

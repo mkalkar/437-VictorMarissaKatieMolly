@@ -7,6 +7,22 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
 
+/*const FirstName = () => {
+    const [value, onChangeText] = React.useState('');
+
+    return (
+        <>
+            <Text>
+                First Name:
+          </Text>
+            <TextInput
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 200 }}
+                onChangeText={text => onChangeText(text)}
+                value={value}
+            />
+        </>
+    );
+}
 const Username = () => {
     const [value, onChangeText] = React.useState('');
 
@@ -39,7 +55,40 @@ const Password = () => {
         </>
     );
 }
-export default function LoginScreen({ navigation }) {
+const VerifyPassword = () => {
+    const [value, onChangeText] = React.useState('');
+
+    return (
+        <>
+            <Text>
+                Verify Your Password:
+          </Text>
+            <TextInput
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 200 }}
+                onChangeText={text => onChangeText(text)}
+                value={value}
+            />
+        </>
+    );
+}*/
+const SUFields = (props) => {
+    const [value, onChangeText] = React.useState('');
+
+    return (
+        <>
+            <Text>
+                {props.display}
+            </Text>
+            <TextInput
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: 200 }}
+                onChangeText={text => onChangeText(text)}
+                value={value}
+            />
+        </>
+    );
+}
+
+export default function SignupScreen({ navigation }) {
     return (
         <>
             <View>
@@ -48,16 +97,35 @@ export default function LoginScreen({ navigation }) {
                 </Text>
             </View>
             <View style={styles.body}>
-                <Username />
-                <Password />
+                <SUFields display="First Name" />
+                <SUFields display="Last Name" />
+                <SUFields display="Username" />
+                <SUFields display="Password" />
+                <SUFields display="Verify Password" />
+                <SUFields display="Email" />
+                <SUFields display="Zip Code" />
+
+
+
+
                 <Button
-                    title="Log In"
+                    title="Submit"
                     onPress={() => navigation.navigate('Home')}
                 />
             </View>
         </>
     );
 }
+/*<FirstName />
+                <LastName />
+                <Username />
+                <Password />
+                <VerifyPassword />
+                <Email />
+                <ZipCode />
+                <ProfilePic />
+                <InterestButtons />*/
+
 const styles = StyleSheet.create({
     heading: {
         backgroundColor: '#fff',
