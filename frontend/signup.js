@@ -6,7 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
-
+import HomeScreen from './home';
+import ToHomeNav from '../App';
+const SUStack = createStackNavigator();
 
 const SUFields = (props) => {
     const [value, onChangeText] = React.useState('');
@@ -30,7 +32,7 @@ export default function SignupScreen({ navigation }) {
         <>
             <View>
                 <Text style={styles.heading}>
-                    Login!!!
+                    Sign up here!
                 </Text>
             </View>
             <View style={styles.body}>
@@ -41,15 +43,12 @@ export default function SignupScreen({ navigation }) {
                 <SUFields display="Verify Password" />
                 <SUFields display="Email" />
                 <SUFields display="Zip Code" />
-
-
-
-
                 <Button
                     title="Submit"
                     onPress={() => navigation.navigate('Home')}
                 />
             </View>
+
         </>
     );
 }
@@ -66,7 +65,7 @@ export default function SignupScreen({ navigation }) {
 const styles = StyleSheet.create({
     heading: {
         backgroundColor: '#fff',
-        fontSize: 80,
+        fontSize: 60,
         justifyContent: 'center',
         alignItems: 'center'
     },

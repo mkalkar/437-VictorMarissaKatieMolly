@@ -7,12 +7,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import ChatScreen from './frontend/chat.js';
-import ProfilePage from './frontend/profile.js';
-import HomeScreen from './frontend/home.js';
+import ChatScreen from './chat.js';
+import ProfilePage from './profile.js';
 const Tab = createBottomTabNavigator();
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
 
     return (
         <>
@@ -27,41 +26,39 @@ export default function HomeScreen({ navigation }) {
                     onPress={() => navigation.navigate('Profile')}
                 />
             </View>
-            <NavigationContainer>
-                <Tab.Navigator
-                    initialRouteName="Start"
-                    screenOptions={({ route }) => ({
-                        tabBarIcon: ({ focused, color, size }) => {
-                            let iconName;
-                            let newVar;
-                            if (route.name === 'Home') {
-                                iconName = 'home-outline';
-                            } else if (route.name === 'Chat') {
-                                iconName = 'chatbox-outline';
-                            }
-                            else {
-                                iconName = 'person-circle-outline';
-                            }
 
-                            // You can return any component that you like here!
-                            return <Ionicons name={iconName} size={size} color={color} />;
-                        },
-                    })}
-                    tabBarOptions={{
-                        activeTintColor: 'tomato',
-                        inactiveTintColor: 'gray',
-                    }}
+            <Tab.Navigator
+                initialRouteName="Start"
+                screenOptions={({ route }) => ({
+                    tabBarIcon: ({ focused, color, size }) => {
+                        let iconName;
+                        let newVar;
+                        if (route.name === 'Home') {
+                            iconName = 'home-outline';
+                        } else if (route.name === 'Chat') {
+                            iconName = 'chatbox-outline';
+                        }
+                        else {
+                            iconName = 'person-circle-outline';
+                        }
+
+                        // You can return any component that you like here!
+                        return <Ionicons name={iconName} size={size} color={color} />;
+                    },
+                })}
+                tabBarOptions={{
+                    activeTintColor: 'tomato',
+                    inactiveTintColor: 'gray',
+                }}
 
 
-                >
-                    <Tab.Screen name="Start" component={StartScreen} />
-                    <Tab.Screen name="Sign up" component={SignupScreen} />
-                    <Tab.Screen name="Login" component={LoginScreen} />
-                    <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home Page' }} />
-                    <Tab.Screen name="Chat" component={ChatScreen} />
-                    <Tab.Screen name="Profile" component={ProfilePage} />
-                </Tab.Navigator>
-            </NavigationContainer>
+            >
+
+                <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home Page' }} />
+                <Tab.Screen name="Chat" component={ChatScreen} />
+                <Tab.Screen name="Profile" component={ProfilePage} />
+            </Tab.Navigator>
+
         </>
     );
 
