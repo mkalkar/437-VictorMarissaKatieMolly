@@ -8,13 +8,13 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import { Icon } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function GroupScreen({ route, navigation }) {
-    const { display } = route.params;
+
+export default function MemberScreen({ route, navigation }) {
+    const { name } = route.params;
     return (
         <>
-
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text> {display}</Text>
+                <Text> {name}</Text>
             </View>
 
         </>

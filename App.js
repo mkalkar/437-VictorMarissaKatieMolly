@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LoginScreen from './frontend/login.js';
 import SignupScreen from './frontend/signup.js';
@@ -15,12 +15,15 @@ import ProfilePage from './frontend/profile.js';
 import HomeScreen from './frontend/home.js';
 import Splash from './frontend/splash.js';
 import GroupScreen from './frontend/group.js';
+import MemberScreen from './frontend/member.js';
+
 const AuthStack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const LoginStack = createStackNavigator();
 const SignupStack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const TabsScreen = () => (
   <Tabs.Navigator
@@ -52,11 +55,16 @@ const TabsScreen = () => (
     <Tabs.Screen name="Profile" component={ProfileStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
   </Tabs.Navigator>
 )
+const MemberDrawer = () => (
+  <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
+    <Drawer.Scren name="Member" component={MemberScreen} />
+  </Drawer.Navigator>
+)
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
     <HomeStack.Screen name="Home" component={HomeScreen} options={{ headerShown: false, gestureEnabled: false }} />
-    <HomeStack.Screen name="Group" component={GroupScreen} options={{ headerShown: false }} />
+    <HomeStack.Screen name="Group" component={GroupScreen} options={{ headerShown: false, gestureEnabled: false }} />
   </HomeStack.Navigator>
 )
 const ProfileStackScreen = () => (
@@ -94,7 +102,6 @@ function StartScreen({ navigation }) {
   );
 }
 
-const Drawer = createDrawerNavigator();
 
 
 export default function App() {
