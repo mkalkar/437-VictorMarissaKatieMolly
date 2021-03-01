@@ -15,9 +15,9 @@ import HomeScreen from './frontend/home.js';
 
 //aws authentication imports
 import { withAuthenticator } from 'aws-amplify-react-native';
-import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
+// import Amplify, { Auth } from 'aws-amplify';
+// import awsconfig from './aws-exports';
+// Amplify.configure(awsconfig);
 
 
 
