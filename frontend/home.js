@@ -7,19 +7,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import ChatScreen from './chat.js';
 import ProfilePage from './profile.js';
+import GroupScreen from './group.js';
 
 export default function HomeScreen({ navigation }) {
-
+    let groupName = "Basketball";
+    let group2 = "Gardening";
     return (
         <>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text> Home!</Text>
-                <Button
-                    title="Go to Chat"
-                    onPress={() => navigation.push('Chat')}
-                />
+                <Button title={groupName} onPress={() => navigation.push('Group', { display: groupName })} />
+                <Button title={group2} onPress={() => navigation.push('Group', { display: group2 })} />
 
             </View>
 

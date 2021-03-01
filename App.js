@@ -9,15 +9,12 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import { Icon } from 'react-native-elements';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import ChatScreen from './frontend/chat.js';
 import LoginScreen from './frontend/login.js';
 import SignupScreen from './frontend/signup.js';
 import ProfilePage from './frontend/profile.js';
 import HomeScreen from './frontend/home.js';
 import Splash from './frontend/splash.js';
-//const Tab = createBottomTabNavigator();
-
-
+import GroupScreen from './frontend/group.js';
 const AuthStack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
@@ -59,13 +56,12 @@ const TabsScreen = () => (
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
     <HomeStack.Screen name="Home" component={HomeScreen} options={{ headerShown: false, gestureEnabled: false }} />
-    <HomeStack.Screen name="Chat" component={ChatScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <HomeStack.Screen name="Group" component={GroupScreen} options={{ headerShown: false }} />
   </HomeStack.Navigator>
 )
 const ProfileStackScreen = () => (
   <ProfileStack.Navigator>
     <ProfileStack.Screen name="Profile" component={ProfilePage} options={{ headerShown: false, gestureEnabled: false }} />
-    <ProfileStack.Screen name="Chat" component={ChatScreen} options={{ headerShown: false, gestureEnabled: false }} />
   </ProfileStack.Navigator>
 )
 
@@ -73,6 +69,7 @@ const LoginStackScreen = () => (
   <LoginStack.Navigator>
     <LoginStack.Screen name="Login" component={LoginScreen} options={{ headerShown: false, gestureEnabled: false }} />
     <LoginStack.Screen name="Home" component={TabsScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <LoginStack.Screen name="Signup" component={SignupStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
   </LoginStack.Navigator>
 )
 const SignupStackScreen = () => (

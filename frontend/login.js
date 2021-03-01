@@ -57,6 +57,7 @@ export default function LoginScreen({ navigation }) {
                     title="Log In"
                     onPress={() => navigation.push('Home')}
                 />
+                <Button title="Don't have an account? Sign up" onPress={() => navigation.push('Signup')} />
             </View>
 
         </>
