@@ -12,6 +12,10 @@ import ChatScreen from './frontend/chat.js';
 import ProfilePage from './frontend/profile.js';
 import HomeScreen from './frontend/home.js';
 
+//aws authentication imports
+import { withAuthenticator } from 'aws-amplify-react-native';
+
+
 
 
 const Tab = createBottomTabNavigator();
@@ -52,4 +56,4 @@ function App() {
 
   );
 }
-export default App;
+export default withAuthenticator(App);
