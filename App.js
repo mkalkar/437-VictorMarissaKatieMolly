@@ -12,15 +12,19 @@ import ChatScreen from './frontend/chat.js';
 import ProfilePage from './frontend/profile.js';
 import HomeScreen from './frontend/home.js';
 
+
 //aws authentication imports
 import { withAuthenticator } from 'aws-amplify-react-native';
-
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 
 
 const Tab = createBottomTabNavigator();
 function App() {
   return (
+    <button onClick={signUp()}>sign up here</button>,
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
