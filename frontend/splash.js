@@ -6,29 +6,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import ChatScreen from './chat.js';
-import ProfilePage from './profile.js';
 
-export default function HomeScreen({ navigation }) {
+export default function Splash() {
 
     return (
-        <>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text> Home!</Text>
-                <Button
-                    title="Go to Chat"
-                    onPress={() => navigation.push('Chat')}
-                />
-
-            </View>
-
-
-
-        </>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "red" }}>
+            <Text>Loading...</Text>
+        </View>
     );
 
 }
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

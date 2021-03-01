@@ -7,46 +7,123 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-//import ChatScreen from './frontend/chat.js';
-//import ProfilePage from './frontend/profile.js';
-//import HomeScreen from './frontend/home.js';
+import ChatScreen from './frontend/chat.js';
 import LoginScreen from './frontend/login.js';
 import SignupScreen from './frontend/signup.js';
+import ProfilePage from './frontend/profile.js';
+import HomeScreen from './frontend/home.js';
+import Splash from './frontend/splash.js';
 //const Tab = createBottomTabNavigator();
-const RootStack = createStackNavigator();
-const ToHomeNavStack = createStackNavigator();
+
+
+const AuthStack = createStackNavigator();
+const Tabs = createBottomTabNavigator();
+const HomeStack = createStackNavigator();
+const ProfileStack = createStackNavigator();
+const LoginStack = createStackNavigator();
+const SignupStack = createStackNavigator();
+
+const TabsScreen = () => (
+  <Tabs.Navigator
+    initialRouteName="Home"
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+        let newVar;
+        if (route.name === 'Home') {
+          iconName = 'home-outline';
+        } else if (route.name === 'Chat') {
+          iconName = 'chatbox-outline';
+        }
+        else {
+          iconName = 'person-circle-outline';
+        }
+
+        // You can return any component that you like here!
+        return <Ionicons name={iconName} size={size} color={color} />;
+      },
+    })}
+    tabBarOptions={{
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    }}
+  >
+
+    <Tabs.Screen name="Home" component={HomeStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <Tabs.Screen name="Profile" component={ProfileStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
+  </Tabs.Navigator>
+)
+
+const HomeStackScreen = () => (
+  <HomeStack.Navigator>
+    <HomeStack.Screen name="Home" component={HomeScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <HomeStack.Screen name="Chat" component={ChatScreen} options={{ headerShown: false, gestureEnabled: false }} />
+  </HomeStack.Navigator>
+)
+const ProfileStackScreen = () => (
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name="Profile" component={ProfilePage} options={{ headerShown: false, gestureEnabled: false }} />
+    <ProfileStack.Screen name="Chat" component={ChatScreen} options={{ headerShown: false, gestureEnabled: false }} />
+  </ProfileStack.Navigator>
+)
+
+const LoginStackScreen = () => (
+  <LoginStack.Navigator>
+    <LoginStack.Screen name="Login" component={LoginScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <LoginStack.Screen name="Home" component={TabsScreen} options={{ headerShown: false, gestureEnabled: false }} />
+  </LoginStack.Navigator>
+)
+const SignupStackScreen = () => (
+  <SignupStack.Navigator>
+    <SignupStack.Screen name="Sign Up" component={SignupScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <SignupStack.Screen name="Home" component={TabsScreen} options={{ headerShown: false, gestureEnabled: false }} />
+  </SignupStack.Navigator>
+)
 function StartScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text> Home ;)</Text>
+      <Text> Welcome ;)</Text>
       <Button
         title="Login"
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.push('Login')}
       />
       <Button
         title="Sign Up"
-        onPress={() => navigation.navigate('Sign Up')}
+        onPress={() => navigation.push('Sign Up')}
       />
     </View>
   );
 }
+
+const Drawer = createDrawerNavigator();
+
+
 export default function App() {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [userToken, setUserToken] = React.useState(''); //used for authentication
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+  if (isLoading) {
+    return <Splash />;
+  }
+
   return (
     <NavigationContainer>
-      <RootStack.Navigator initalRouteName='Start'>
-        <RootStack.Screen name='Start' component={StartScreen} />
-        <RootStack.Screen name='Login' component={LoginScreen} />
-        <RootStack.Screen name='Sign Up' component={SignupScreen} />
-      </RootStack.Navigator>
-    </NavigationContainer>
-  );
-}
+      {userToken ? ( //will be used for authentication soon
+        <TabsScreen />
+      ) :
+        (<AuthStack.Navigator initalRouteName='Start'>
+          <AuthStack.Screen name='Start' component={StartScreen} options={{ headerShown: false, gestureEnabled: false }} />
+          <AuthStack.Screen name='Login' component={LoginStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
+          <AuthStack.Screen name='Sign Up' component={SignupStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
+        </AuthStack.Navigator>)
+      }
+    </NavigationContainer >
 
-function ToHomeNav() {
-  return (
-    <ToHomeNavStack>
-      <ToHomeNavStack.Screen name='Home' component={HomeScreen} />
-    </ToHomeNavStack>
   );
 }

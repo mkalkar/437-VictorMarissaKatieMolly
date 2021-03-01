@@ -18,7 +18,7 @@ export default function ChatScreen({ navigation }) {
       />
       <Button
         title="Go to profile"
-        onPress={() => navigation.navigate("Profile")}
+        onPress={() => navigation.push("Profile")}
       />
     </View>
   );

@@ -55,7 +55,7 @@ export default function LoginScreen({ navigation }) {
                 <Password />
                 <Button
                     title="Log In"
-                //onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.push('Home')}
                 />
             </View>
 

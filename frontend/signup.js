@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
 import HomeScreen from './home';
-import ToHomeNav from '../App';
+
 const SUStack = createStackNavigator();
 
 const SUFields = (props) => {
@@ -45,7 +45,7 @@ export default function SignupScreen({ navigation }) {
                 <SUFields display="Zip Code" />
                 <Button
                     title="Submit"
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.push('Home')}
                 />
             </View>
 
