@@ -57,7 +57,7 @@ const TabsScreen = () => (
 )
 const MemberDrawer = () => (
   <Drawer.Navigator>
-    <Drawer.Screen name="Group" component={GroupScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <Drawer.Screen name="Group" component={GroupScreen} options={{ headerShown: false, gestureEnabled: true }} />
     <Drawer.Screen name="Member" component={MemberScreen} options={{ headerShown: false, gestureEnabled: true }} />
   </Drawer.Navigator>
 )
@@ -107,7 +107,7 @@ function StartScreen({ navigation }) {
 
 export default function App() {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [userToken, setUserToken] = React.useState('dfds'); //used for authentication
+  const [userToken, setUserToken] = React.useState(''); //used for authentication
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);

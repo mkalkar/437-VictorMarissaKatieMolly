@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer, createAppContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,10 +13,19 @@ export default function MemberScreen({ route, navigation }) {
     // const { name } = route.params;
     return (
         <>
+            <View>
+                <Text>
+                    placeholder text
+                </Text>
+            </View>
+            <View style={{ justifyContent: "center", alignSelf: "left", alignContent: "center", }}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Ionicons name="arrow-back-outline" size={30} color="black" />
+                </TouchableOpacity>
+            </View>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text> Member</Text>
             </View>
-            <Button title="Go back" onPress={() => navigation.goBack()} />
         </>
     );
 }
