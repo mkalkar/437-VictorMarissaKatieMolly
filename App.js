@@ -56,8 +56,8 @@ const TabsScreen = () => (
   </Tabs.Navigator>
 )
 const MemberDrawer = () => (
-  <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
-    <Drawer.Scren name="Member" component={MemberScreen} />
+  <Drawer.Navigator>
+    <Drawer.Screen name="Member" component={HomeStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
   </Drawer.Navigator>
 )
 
@@ -106,7 +106,7 @@ function StartScreen({ navigation }) {
 
 export default function App() {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [userToken, setUserToken] = React.useState(''); //used for authentication
+  const [userToken, setUserToken] = React.useState('dfds'); //used for authentication
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
