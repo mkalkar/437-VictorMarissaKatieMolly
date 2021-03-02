@@ -17,8 +17,8 @@ export default function HomeScreen({ navigation }) {
         <>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text> Home!</Text>
-                <Button title={groupName} onPress={() => navigation.push('Group', { display: groupName })} />
-                <Button title={group2} onPress={() => navigation.push('Group', { display: group2 })} />
+                <Button title={groupName} onPress={() => navigation.push('Group', { screen: 'Group', params: { display: groupName }, })} />
+                <Button title={group2} onPress={() => navigation.push('Group', { screen: 'Group', params: { display: group2 }, })} />
 
             </View>
 

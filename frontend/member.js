@@ -10,13 +10,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
 export default function MemberScreen({ route, navigation }) {
-    const { name } = route.params;
+    // const { name } = route.params;
     return (
         <>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text> {name}</Text>
+                <Text> Member</Text>
             </View>
-
+            <Button title="Go back" onPress={() => navigation.goBack()} />
         </>
     );
 }

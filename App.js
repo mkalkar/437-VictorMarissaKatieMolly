@@ -57,14 +57,15 @@ const TabsScreen = () => (
 )
 const MemberDrawer = () => (
   <Drawer.Navigator>
-    <Drawer.Screen name="Member" component={HomeStackScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <Drawer.Screen name="Group" component={GroupScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <Drawer.Screen name="Member" component={MemberScreen} options={{ headerShown: false, gestureEnabled: true }} />
   </Drawer.Navigator>
 )
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
     <HomeStack.Screen name="Home" component={HomeScreen} options={{ headerShown: false, gestureEnabled: false }} />
-    <HomeStack.Screen name="Group" component={GroupScreen} options={{ headerShown: false, gestureEnabled: false }} />
+    <HomeStack.Screen name="Group" component={MemberDrawer} options={{ headerShown: false, gestureEnabled: false }} />
   </HomeStack.Navigator>
 )
 const ProfileStackScreen = () => (

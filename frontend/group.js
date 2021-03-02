@@ -5,17 +5,26 @@ import { NavigationContainer, createAppContainer } from '@react-navigation/nativ
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-import { Icon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 //import { IonButton } from '@ionic/react';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
-import MemberDrawer from '../App.js';
+
 export default function GroupScreen({ route, navigation }) {
     const { display } = route.params;
     return (
         <>
-            <Button title="progress" Ionicons="reorder-three-outline" onPress={() => alert("todo!!")} block>
-            </Button>
+            <Button style={{ justifyContent: 'left' }}
+                icon={
+                    <Icon
+                        name="arrow-right"
+                        size={15}
+                        color="black"
+                    />
+                }
+                onPress={() => navigation.toggleDrawer()}
+                title="Button with icon component"
+            />
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text> {display}</Text>
             </View>
@@ -23,6 +32,9 @@ export default function GroupScreen({ route, navigation }) {
         </>
     );
 }
+//<Button title="progress" Ionicons="reorder-three-outline" onPress={() => navigation.toggleDrawer()} block>
+//</Button>
+
 //<Ionicons name="reorder-three-outline" size={30} color="gray" />
 
 const styles = StyleSheet.create({
