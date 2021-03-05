@@ -7,30 +7,22 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
 
-export default function ChatScreen({ navigation }) {
+export default function Splash() {
 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "red" }}>
-      <Text>Chit chat with your friends</Text>
-      <Button
-        title="Go back"
-        onPress={() => navigation.goBack()}
-      />
-      <Button
-        title="Go to profile"
-        onPress={() => navigation.navigate("Profile")}
-      />
-    </View>
-  );
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "red" }}>
+            <Text>Loading...</Text>
+        </View>
+    );
 
 }
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
