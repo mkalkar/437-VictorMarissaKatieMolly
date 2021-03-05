@@ -16,7 +16,7 @@ import HomeScreen from './frontend/home.js';
 //aws authentication imports
 // import Amplify, { amazonSignInButton } from "aws-amplify";
 import Amplify from 'aws-amplify'
-import awsconfig from './src/aws-exports.js';
+import awsconfig from '/src/aws-exports.js';
 // import {AmplifySignOut, withAuthenticator} from 'aws-amplify-react-native';
 import { AmplifySignOut, withAuthenticator } from 'aws-amplify-react-native';
 // import Amplify, { Auth } from 'aws-amplify';
