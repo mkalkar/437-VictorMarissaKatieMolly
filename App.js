@@ -16,6 +16,7 @@ import HomeScreen from './frontend/home.js';
 import Splash from './frontend/splash.js';
 import GroupScreen from './frontend/group.js';
 import MemberScreen from './frontend/member.js';
+import { withAuthenticator } from 'aws-amplify-react-native'
 
 const AuthStack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -105,7 +106,7 @@ function StartScreen({ navigation }) {
 
 
 
-export default function App() {
+function App() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [userToken, setUserToken] = React.useState(''); //used for authentication
   React.useEffect(() => {
@@ -132,3 +133,5 @@ export default function App() {
 
   );
 }
+
+export default withAuthenticator(App) 
