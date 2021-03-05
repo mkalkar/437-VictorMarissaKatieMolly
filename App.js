@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { Icon } from 'react-native-elements';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+//import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LoginScreen from './frontend/login.js';
 import SignupScreen from './frontend/signup.js';
@@ -24,7 +24,7 @@ const HomeStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const LoginStack = createStackNavigator();
 const SignupStack = createStackNavigator();
-const Drawer = createDrawerNavigator();
+//const Drawer = createDrawerNavigator();
 
 const TabsScreen = () => (
   <Tabs.Navigator
