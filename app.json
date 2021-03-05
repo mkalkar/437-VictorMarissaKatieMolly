@@ -1,6 +1,7 @@
 {
   "name": "437-VictorMarissaKatieMolly",
   "displayName": "437-VictorMarissaKatieMolly",
+  "entryPoint": "./App.js",
   "expo": {
     "name": "437-VictorMarissaKatieMolly",
     "slug": "437-VictorMarissaKatieMolly",

@@ -11,19 +11,16 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChatScreen from './frontend/chat.js';
 import ProfilePage from './frontend/profile.js';
 import HomeScreen from './frontend/home.js';
+import Expo from 'expo';
 
 
-//aws authentication imports
-// import Amplify, { amazonSignInButton } from "aws-amplify";
-import Amplify from 'aws-amplify'
-import awsconfig from '/src/aws-exports.js';
-// import {AmplifySignOut, withAuthenticator} from 'aws-amplify-react-native';
-import { AmplifySignOut, withAuthenticator } from 'aws-amplify-react-native';
+
 // import Amplify, { Auth } from 'aws-amplify';
 // import awsconfig from './aws-exports';
 // Amplify.configure(awsconfig);
 
-Amplify.configure(awsconfig)
+import { withAuthenticator } from 'aws-amplify-react-native'
+
 
 const Tab = createBottomTabNavigator();
 function App() {
@@ -66,5 +63,6 @@ function App() {
 
   );
 }
-// export default withAuthenticator(App);
-export default(App);
+Expo.registerRootComponent(App);
+export default withAuthenticator(App)
+
