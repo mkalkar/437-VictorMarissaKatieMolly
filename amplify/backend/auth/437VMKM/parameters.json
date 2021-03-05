@@ -1,7 +1,7 @@
 {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "437vmk8ebb26cd",
+    "resourceNameTruncated": "437vmk116845d9",
     "userPoolName": "437VMKM",
     "autoVerifiedAttributes": [
         "phone_number"
@@ -11,7 +11,7 @@
         "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
-    "smsVerificationMessage": "Forgot password code: {####}",
+    "smsVerificationMessage": "Body {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
@@ -19,19 +19,18 @@
     "passwordPolicyCharacters": [
         "Requires Lowercase",
         "Requires Numbers",
-        "Requires Symbols",
         "Requires Uppercase"
     ],
     "requiredAttributes": [
-        "email"
+        "preferred_username"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "437VMK8ebb26cd_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "437VMK116845d9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "8ebb26cd",
+    "sharedId": "116845d9",
     "resourceName": "437VMKM",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
@@ -47,9 +46,6 @@
         ]
     },
     "serviceName": "Cognito",
-    "usernameAttributes": [
-        "email"
-    ],
     "useDefault": "manual",
     "userPoolGroups": false,
     "userPoolGroupList": [],
