@@ -8,13 +8,8 @@ export default function ProfilePage({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "purple" }}>
             <Text>Your Profile</Text>
-            <Button
-                title="Go Back"
-                onPress={() => navigation.goBack()}
-            />
         </View>
     );
-
 }
 
 
