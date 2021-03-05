@@ -15,7 +15,9 @@ import HomeScreen from './frontend/home.js';
 
 
 const Tab = createBottomTabNavigator();
+
 function App() {
+  let f = 0;
   return (
     <NavigationContainer>
       <Tab.Navigator
