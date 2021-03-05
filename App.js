@@ -63,6 +63,6 @@ function App() {
 
   );
 }
-Expo.registerRootComponent(App);
+// Expo.registerRootComponent(App);
 export default withAuthenticator(App)
 
