@@ -8,7 +8,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import { Icon } from 'react-native-elements';
 
 import Amplify from 'aws-amplify';
-import config from '../src/aws-exports';
+import config from '../src/aws-exports.js';
 Amplify.configure(config);
 
 export default function HomeScreen({ navigation }) {
