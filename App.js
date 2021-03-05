@@ -14,10 +14,10 @@ import HomeScreen from './frontend/home.js';
 
 
 //aws authentication imports
-import Amplify, { amazonSignInButton } from "aws-amplify";
+// import Amplify, { amazonSignInButton } from "aws-amplify";
 import awsconfig from './aws-exports';
-import {AmplifySignOut, withAuthenticator} from 'aws-amplify-react-native';
-// import { withAuthenticator } from 'aws-amplify-react-native';
+// import {AmplifySignOut, withAuthenticator} from 'aws-amplify-react-native';
+import { withAuthenticator } from 'aws-amplify-react-native';
 // import Amplify, { Auth } from 'aws-amplify';
 // import awsconfig from './aws-exports';
 // Amplify.configure(awsconfig);
