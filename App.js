@@ -15,9 +15,10 @@ import HomeScreen from './frontend/home.js';
 
 //aws authentication imports
 // import Amplify, { amazonSignInButton } from "aws-amplify";
-import awsconfig from './aws-exports';
+import Amplify from 'aws-amplify'
+import awsconfig from './src/aws-exports';
 // import {AmplifySignOut, withAuthenticator} from 'aws-amplify-react-native';
-import { withAuthenticator } from 'aws-amplify-react-native';
+import { AmplifySignOut, withAuthenticator } from 'aws-amplify-react-native';
 // import Amplify, { Auth } from 'aws-amplify';
 // import awsconfig from './aws-exports';
 // Amplify.configure(awsconfig);
@@ -27,9 +28,10 @@ Amplify.configure(awsconfig)
 const Tab = createBottomTabNavigator();
 function App() {
   return (
-    <button onClick={signUp()}>sign up here</button>,
+    // <button onClick={signUp()}>sign up here</button>,
     
-
+    
+    <AmplifySignOut/>,
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={({ route }) => ({
@@ -60,7 +62,7 @@ function App() {
         <Tab.Screen name="Chat" component={ChatScreen} />
         <Tab.Screen name="Profile" component={ProfilePage} />
       </Tab.Navigator>
-    </NavigationContainer>
+   
 
   );
 }
