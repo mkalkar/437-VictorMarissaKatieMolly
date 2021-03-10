@@ -5,7 +5,7 @@ import { StyleSheet, Text, Button, View } from 'react-native';
 import { NavigationContainer, createAppContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Icon } from 'react-native-elements';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChatScreen from './frontend/chat.js';
@@ -46,7 +46,25 @@ function App() {
       >
         <Tab.Screen name="Home" component={HomeScreen} options={{ title: 'Home Page' }} />
         <Tab.Screen name="Chat" component={ChatScreen} />
-        <Tab.Screen name="Profile" component={ProfilePage} />
+        <Tab.Screen name="Profile" component={ProfilePage}
+        options={{
+          title:'',
+         
+          
+          headerRight:() => (
+            <View style={{marginRight: 10}}>
+            <Icon.Button
+              name="settings"
+              size={25}
+              backgroundColor="#fff"
+              color="#000"
+              //onPress={() => route.}
+              />
+              </View>
+          ),
+
+        }} 
+        />
       </Tab.Navigator>
     </NavigationContainer>
 
